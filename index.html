@@ -1,232 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Financial Guide for Students in Finland</title>
-<link rel="stylesheet" type="text/css" href="main.css">
-<link rel="icon" type="image/x-icon" href="./image/favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A bilingual financial preparedness guide for Burmese students planning to study abroad and students studying in Finland.">
+  <title>Financially Prepared | Burmese Student Guide</title>
+  <style>
+    :root {
+      --ink: #19352f; --muted: #61716c; --green: #245b4b; --mint: #eaf2ed;
+      --cream: #f8f7f2; --line: #dce5df; --gold: #e8c978; --white: #fff;
+      --shadow: 0 12px 32px rgba(25,53,47,.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--cream); color: var(--ink); font-family: Arial, "Noto Sans Myanmar", sans-serif; line-height: 1.65; }
+    a { color: var(--green); }
+    .topbar { position: sticky; top: 0; z-index: 10; background: rgba(248,247,242,.96); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+    .nav { max-width: 1120px; margin: auto; padding: 14px 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { font-weight: 800; letter-spacing: .08em; font-size: .88rem; color: var(--green); }
+    .navlinks { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+    .navlinks a { text-decoration: none; font-size: .9rem; font-weight: 600; }
+    button, .button { border: 0; border-radius: 999px; padding: 10px 17px; background: var(--green); color: white; font-weight: 700; cursor: pointer; text-decoration: none; }
+    button.secondary { background: var(--white); color: var(--green); border: 1px solid var(--line); }
+    .hero { background: var(--green); color: white; padding: 76px 22px 68px; }
+    .hero-inner { max-width: 1120px; margin: auto; display: grid; grid-template-columns: 1.35fr .65fr; gap: 42px; align-items: center; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .16em; font-size: .75rem; color: #cce0d4; font-weight: 700; }
+    h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); line-height: 1.04; margin: 14px 0 20px; letter-spacing: -.04em; }
+    .hero p { max-width: 680px; color: #e3eee7; font-size: 1.1rem; }
+    .hero-card { background: #fff; color: var(--ink); border-radius: 22px; padding: 25px; box-shadow: var(--shadow); }
+    .hero-card strong { display: block; font-size: 1.1rem; margin-bottom: 8px; }
+    .hero-card p { color: var(--muted); font-size: .95rem; margin: 0; }
+    main { max-width: 1120px; margin: auto; padding: 38px 22px 80px; }
+    .section { padding: 42px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 82px; }
+    .section-head { max-width: 760px; margin-bottom: 24px; }
+    .kicker { color: var(--green); text-transform: uppercase; font-size: .75rem; font-weight: 800; letter-spacing: .14em; }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.15; margin: 8px 0 12px; }
+    h3 { margin: 0 0 10px; font-size: 1.2rem; }
+    .lead { color: var(--muted); font-size: 1.08rem; }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+    .card { background: white; border: 1px solid var(--line); border-radius: 18px; padding: 22px; box-shadow: 0 5px 18px rgba(25,53,47,.035); }
+    .card p { margin: 8px 0 0; color: #40534c; }
+    .tag { display: inline-block; background: var(--mint); color: var(--green); border-radius: 999px; padding: 4px 10px; font-size: .75rem; font-weight: 700; margin-bottom: 10px; }
+    .callout { background: #f0ead8; border-left: 4px solid var(--gold); padding: 17px 20px; border-radius: 0 12px 12px 0; margin: 20px 0; }
+    .steps { padding-left: 22px; }
+    .steps li { padding: 4px 0 8px; }
+    .lang-my { display: none; }
+    body.mm .lang-en { display: none; }
+    body.mm .lang-my { display: block; }
+    .bilingual-note { font-size: .85rem; color: var(--muted); }
+    .scenario { background: var(--mint); border-radius: 18px; padding: 24px; margin-top: 18px; }
+    .checklist label { display: flex; gap: 10px; margin: 10px 0; align-items: flex-start; }
+    .checklist input { margin-top: 6px; accent-color: var(--green); }
+    .resource-list li { margin: 9px 0; }
+    footer { background: #19352f; color: #dce9e1; padding: 28px 22px; text-align: center; font-size: .9rem; }
+    footer a { color: white; }
+    @media (max-width: 760px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .nav { align-items: flex-start; flex-direction: column; }
+      .navlinks { gap: 12px; }
+      .cards { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
-
 <body>
+<header class="topbar">
+  <nav class="nav" aria-label="Main navigation">
+    <div class="brand">LET'S BE FINANCIALLY PREPARED</div>
+    <div class="navlinks">
+      <a href="#before">Before you go</a>
+      <a href="#finland">Finland</a>
+      <a href="#manage">Manage money</a>
+      <a href="#risks">Risks</a>
+      <a href="#tools">Checklist</a>
+      <button class="secondary" id="languageButton" type="button" aria-label="Switch language">မြန်မာဘာသာ</button>
+    </div>
+  </nav>
+</header>
 
-<div id="home">
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow lang-en">A practical guide for Burmese students</div>
+      <div class="eyebrow lang-my">မြန်မာကျောင်းသား/သူများအတွက် လက်တွေ့အသုံးဝင်သော လမ်းညွှန်</div>
+      <h1 class="lang-en">Prepare and plan your finances to study in Finland</h1>
+      <h1 class="lang-my">နိုင်ငံခြားပညာသင်ခရီး၊ သင့်ငွေကြေး၊ သင့်အစီအစဉ်</h1>
+      <p class="lang-en">Understand the financial commitment before you leave, prepare for the move, and manage your money while studying in Finland.</p>
+      <p class="lang-my">နိုင်ငံခြားသို့ မထွက်ခွာမီ ကုန်ကျစရိတ်များကို နားလည်ပါ။ ဖင်လန်သို့ ပြောင်းရွှေ့ရန် ပြင်ဆင်ပါ။ ပညာသင်နေစဉ် ငွေကြေးကို စနစ်တကျ စီမံခန့်ခွဲပါ။</p>
+      <a class="button" href="#before"><span class="lang-en">Start exploring</span><span class="lang-my">စတင်လေ့လာရန်</span></a>
+    </div>
+    <aside class="hero-card">
+      <strong class="lang-en">Who is this guide for?</strong>
+      <strong class="lang-my">ဤလမ်းညွှန်သည် မည်သူများအတွက်လဲ။</strong> 
+      <p class="lang-en">For students considering studying abroad, students preparing to move to Finland, and Burmese students already living and studying in Finland.</p>
+      <p class="lang-my">နိုင်ငံခြားတွင် ပညာသင်ရန် စဉ်းစားနေသူများ၊ ဖင်လန်သို့ ပြောင်းရွှေ့ရန် ပြင်ဆင်နေသူများနှင့် ဖင်လန်တွင် ပညာသင်နေပြီးသား မြန်မာကျောင်းသား/သူများအတွက် ဖြစ်သည်။</p>
+    </aside>
+  </div>
+</section>
 
-    <section class="hero">
+<main>
+  <section class="section" id="before">
+    <div class="section-head">
+      <div class="kicker">01 · Before studying abroad</div>
+      <h2 class="lang-en">Can I realistically afford to study abroad?</h2>
+      <h2 class="lang-my">နိုင်ငံခြားတွင် ပညာသင်ရန် ငွေကြေးအရ တကယ်တတ်နိုင်ပါသလား။</h2>
+      <p class="lead lang-en">An admission offer is only one part of the decision. Before accepting a place, estimate the full cost of studying and living abroad not just the tuition fee.</p>
+      <p class="lead lang-my">တက္ကသိုလ်ဝင်ခွင့်ရခြင်းသည် ဆုံးဖြတ်ချက်၏ အစိတ်အပိုင်းတစ်ခုသာ ဖြစ်သည်။ လက်ခံမဆုံးဖြတ်မီ ကျောင်းလခတစ်ခုတည်းမဟုတ်ဘဲ ပညာသင်ခြင်းနှင့် နေထိုင်ခြင်းအတွက် စုစုပေါင်းကုန်ကျစရိတ်ကို ခန့်မှန်းပါ။</p>
+      <p class="lead lang-en"> There have been many cases where students got into trouble due to not being able to afford and sustain their studies and living costs in Finland. So how can you avoid it happening?</p>
+      <p class="lead lang-my">ဖင်လန်နိုင်ငံတွင် ပညာသင်ကြားနေစဉ် ကျောင်းစရိတ်နှင့် နေထိုင်စရိတ်များကို ရေရှည်မတတ်နိုင်ခြင်းကြောင့် အခက်အခဲများ ကြုံတွေ့ခဲ့ရသော ကျောင်းသားများလည်း ရှိပါသည်။ ထိုကဲ့သို့သော အခြေအနေမျိုး မကြုံတွေ့ရစေရန် သင်မည်သို့ ကြိုတင်ပြင်ဆင်နိုင်မည်နည်း။</p>
 
-        <div class="logo">
-         Are you financially prepared to study in Finland?
-        </div>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <span class="tag">Plan beyond tuition</span>
+        <h3 class="lang-en">Look at the complete cost</h3>
+        <h3 class="lang-my">စုစုပေါင်းကုန်ကျစရိတ်ကို ကြည့်ပါ</h3>
+        <p class="lang-en">Include tuition, rent, food, transport, insurance, residence-permit costs, travel, study materials and emergency funds.</p>
+        <p class="lang-my">ကျောင်းလခ၊ အိမ်ငှားခ၊ အစားအသောက်၊ သယ်ယူပို့ဆောင်ရေး၊ အာမခံ၊ နေထိုင်ခွင့်လျှောက်ထားစရိတ်၊ ခရီးစရိတ်၊ သင်ထောက်ကူပစ္စည်းနှင့် မမျှော်လင့်ထားသော ကုန်ကျစရိတ်များကို ထည့်တွက်ပါ။ </p>
+      </article>
+      <article class="card">
+        <span class="tag">Do not assume</span>
+        <h3 class="lang-en">Do not build your plan around a job you do not have</h3>
+        <h3 class="lang-my">မရရှိသေးသော အလုပ်ဝင်ငွေကို အခြေခံပြီး အစီအစဉ်မဆွဲပါနှင့်</h3>
+        <p class="lang-en">Part-time work may help with expenses, but finding a suitable job is not guaranteed. Consider how you would pay essential costs if you did not find work immediately.</p>
+        <p class="lang-my">အချိန်ပိုင်းအလုပ်သည် ကုန်ကျစရိတ်များကို ကူညီပေးနိုင်သော်လည်း သင့်တော်သောအလုပ်ကို ချက်ချင်းရမည်ဟု အာမခံမရှိပါ။ အလုပ်မရသေးသည့်အချိန်တွင် မဖြစ်မနေကုန်ကျစရိတ်များကို မည်သို့ပေးချေမည်ကို ကြိုတင်စဉ်းစားပါ။</p>
+      </article>
+      <article class="card">
+        <span class="tag">Scholarships</span>
+        <h3 class="lang-en">Check exactly what a scholarship covers</h3>
+        <h3 class="lang-my">ပညာသင်ဆုက မည်သည့်ကုန်ကျစရိတ်များကို ကာမိသည်ကို စစ်ဆေးပါ</h3>
+        <p class="lang-en">In Finland, university scholarships for fee-paying bachelor's and master's students usually cover tuition fees, not living costs. Check the scholarship's amount, duration, renewal conditions and whether it provides any living-cost support.</p>
+        <p class="lang-my">ဖင်လန်တွင် ကျောင်းလခပေးရသော ဘွဲ့ကြိုနှင့် မဟာဘွဲ့ကျောင်းသားများအတွက် တက္ကသိုလ်ပညာသင်ဆုများသည် ပုံမှန်အားဖြင့် ကျောင်းလခကိုသာ ကာမိပြီး နေထိုင်စရိတ်ကို မကာမိတတ်ပါ။ ပညာသင်ဆု၏ ပမာဏ၊ ကာလ၊ သက်တမ်းတိုးရန် စည်းကမ်းချက်များနှင့် နေထိုင်စရိတ်အတွက် အထောက်အပံ့ပါဝင်မှုရှိမရှိ စစ်ဆေးပါ။</p>
+        <p><a href="https://www.studyinfinland.fi/funding-your-studies" target="_blank" rel="noopener">Study in Finland: Funding your studies</a></p>
+      </article>
+      <article class="card">
+        <span class="tag">Currency risk</span>
+        <h3 class="lang-en">Consider changes in exchange rates</h3>
+        <h3 class="lang-my">ငွေလဲနှုန်းပြောင်းလဲမှုကို ထည့်သွင်းစဉ်းစားပါ</h3>
+        <p class="lang-en">If your savings or family support are in MMK but your expenses are in EUR, a change in the exchange rate can affect how much money is available to you. Try to have an Euro-based income.</p>
+        <p class="lang-my">သင့်စုဆောင်းငွေ သို့မဟုတ် မိသားစုထောက်ပံ့ငွေသည် ကျပ်ငွေဖြစ်ပြီး ကုန်ကျစရိတ်များသည် ယူရိုဖြစ်ပါက ငွေလဲနှုန်းပြောင်းလဲမှုကြောင့် ရရှိနိုင်သော ယူရိုပမာဏ ပြောင်းလဲနိုင်သည်။ ပညာသင်ကာလတစ်ခုလုံးအတွက် ငွေလဲနှုန်းတစ်ခုတည်းကိုသာ အခြေခံမထားပါနှင့်။ ယူရိုငွေဖြင့် ဝင်ငွေရရှိနိုင်မည့် နည်းလမ်းများကို ကြိုးစားရှာဖွေပါ။</p>
+        <p class="lang-en">As you are already aware of the political and economic crisis in Myanmar, so you should be very mindful of this risk and really plan ahead.</p>
+        <p class="lang-my">မြန်မာနိုင်ငံ၏ နိုင်ငံရေးနှင့် စီးပွားရေးအကျပ်အတည်းများအကြောင်း သင်သိရှိပြီးဖြစ်သည့်အတိုင်း ဤအန္တရာယ်ကို အလေးအနက်ထား စဉ်းစားရန်နှင့် ငွေကြေးဆိုင်ရာ အစီအစဉ်များကို ကြိုတင်သေချာစွာ ရေးဆွဲထားရန် အရေးကြီးပါသည်။</p>
+      </article>
+    </div>
+    <div class="callout">
+      <strong class="lang-en">A useful question to ask yourself:</strong><strong class="lang-my">မိမိကိုယ်ကို မေးသင့်သော မေးခွန်းတစ်ခု -</strong>
+      <div class="lang-en">If my expected income or financial support is delayed or reduced, can I still cover essential expenses?</div>
+      <div class="lang-my">မျှော်မှန်းထားသော ဝင်ငွေ သို့မဟုတ် ငွေကြေးထောက်ပံ့မှု နောက်ကျခြင်း သို့မဟုတ် လျော့နည်းခြင်းရှိပါက မဖြစ်မနေကုန်ကျစရိတ်များကို ဆက်လက်ပေးချေနိုင်ပါသလား။</div>
+    </div>
+  </section>
 
-        <h1>
-        Guide for your studies, finances, and risks
-        </h1>
+  <section class="section" id="finland">
+    <div class="section-head">
+      <div class="kicker">02 · Preparation for Finland </div>
+      <h2 class="lang-en">Before moving to Finland</h2>
+      <h2 class="lang-my">ဖင်လန်သို့ မပြောင်းရွှေ့မီ</h2>
+      <p class="lead lang-en">Finland has specific requirements and costs. Check official information close to the time you apply, because rules and fees can change.</p>
+      <p class="lead lang-my">ဖင်လန်တွင် သီးခြားလိုအပ်ချက်များနှင့် ကုန်ကျစရိတ်များ ရှိသည်။ စည်းမျဉ်းများနှင့် အခကြေးငွေများ ပြောင်းလဲနိုင်သောကြောင့် လျှောက်ထားမည့်အချိန်နှင့် နီးကပ်စွာ တရားဝင်အချက်အလက်များကို စစ်ဆေးပါ။</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <h3 class="lang-en">Residence permit and living funds</h3><h3 class="lang-my">နေထိုင်ခွင့်နှင့် နေထိုင်စရိတ်အတွက် ငွေကြေး</h3>
+        <p class="lang-en">Migri currently requires a student to have at least €800 per month available for living costs. This is an immigration requirement, not a promise that €800 will cover every student's actual expenses. Check Migri's current instructions before applying.</p>
+        <p class="lang-my">လက်ရှိ Migri သတ်မှတ်ချက်အရ ကျောင်းသားတစ်ဦးသည် နေထိုင်စရိတ်အတွက် တစ်လလျှင် အနည်းဆုံး ယူရို ၈၀၀ ရရှိနိုင်ရမည်။ ဤပမာဏသည် လူဝင်မှုကြီးကြပ်ရေးဆိုင်ရာ လိုအပ်ချက်ဖြစ်ပြီး ကျောင်းသားတိုင်း၏ အမှန်တကယ်ကုန်ကျစရိတ်အားလုံးကို ယူရို ၈၀၀ ဖြင့် လုံလောက်မည်ဟု အာမခံခြင်း မဟုတ်ပါ။ မလျှောက်ထားမီ Migri ၏ လက်ရှိညွှန်ကြားချက်များကို စစ်ဆေးပါ။</p>
+        <p><a href="https://migri.fi/en/income-requirement-for-students" target="_blank" rel="noopener">Migri: Income requirement for students</a></p>
+      </article>
+      <article class="card">
+        <h3 class="lang-en">A realistic monthly living-cost estimate</h3><h3 class="lang-my">လက်တွေ့ကျသော လစဉ်နေထိုင်စရိတ် ခန့်မှန်းချက်</h3>
+        <p class="lang-en">The budget of a student is approximately €500–€1,000 per month for living expenses depending on the location. This approximate estimate is based on the author's survey findings.</p>
+        <p class="lang-my">ကျောင်းသားတစ်ဦး၏ နေထိုင်စရိတ်သည် နေထိုင်ရာဒေသပေါ်မူတည်၍ တစ်လလျှင် ယူရို ၅၀၀ မှ ၁,၀၀၀ ခန့်အထိ ရှိနိုင်သည်။ ဤခန့်မှန်းပမာဏသည် စာရေးသူက ကောက်ယူခဲ့သော စစ်တမ်းရလဒ်များအပေါ် အခြေခံထားခြင်းဖြစ်သည်။</p>
+        <p><a href="https://www.studyinfinland.fi/funding-your-studies/fees-and-cost-living" target="_blank" rel="noopener">Study in Finland: Fees and cost of living</a></p>
+      </article>
+      <article class="card">
+        <h3 class="lang-en">Accommodation and arrival costs</h3><h3 class="lang-my">နေထိုင်ရန်နေရာနှင့် ရောက်ရှိချိန်ကုန်ကျစရိတ်</h3>
+        <p class="lang-en">Moreover, the survey findings by the author showed that students spent the most on rent monthly. The rent differs depending on the location. When renting, read contacts carefully, negotiate, and plan ahead.</p>
+        <p class="lang-my">ရောက်ရှိမီ သို့မဟုတ် ရောက်ရှိပြီးမကြာမီ အာမခံငွေ၊ ပထမလအိမ်ငှားခ၊ ပရိဘောဂနှင့် အိမ်သုံးပစ္စည်းများအတွက် ပေးချေရမည်လား စစ်ဆေးပါ။ ဝင်ငွေမရရှိမီကာလအတွက် ငွေကြေးကို ကြိုတင်စီစဉ်ပါ။</p>
+        <p class="lang-en">Finland provides student housing, so check the availability and application process for student housing in your city. It is typically cheaper than private accommodations.</p>
+        <p class="lang-my">ဖင်လန်နိုင်ငံတွင် ကျောင်းသားများအတွက် သီးသန့်အိမ်ရာများ (Student Housing) ရှိပါသည်။ ထို့ကြောင့် သင်နေထိုင်မည့်မြို့တွင် ကျောင်းသားအိမ်ရာများ ရရှိနိုင်မှုနှင့် လျှောက်ထားရမည့် လုပ်ငန်းစဉ်များကို ကြိုတင်စုံစမ်းပါ။ ကျောင်းသားအိမ်ရာများ၏ ငှားရမ်းခသည် ပုံမှန်အားဖြင့် ပုဂ္ဂလိကအိမ်ငှားခများထက် သက်သာလေ့ရှိပါသည်။</p>
+        <p><a href="https://infofinland.fi/en/housing/student-housing" target="_blank" rel="noopener">InfoFinland: Student housing</a></p>
+        
+      </article>
+      <article class="card">
+        <h3 class="lang-en">Tuition, insurance and deadlines</h3><h3 class="lang-my">ကျောင်းလခ၊ အာမခံနှင့် နောက်ဆုံးရက်များ</h3>
+        <p class="lang-en">Confirm your tuition payment schedule, scholarship conditions and insurance requirements directly with your university and the relevant authorities. Record payment deadlines so that you can plan ahead.</p>
+        <p class="lang-my">ကျောင်းလခပေးချေရမည့်အချိန်ဇယား၊ ပညာသင်ဆုစည်းကမ်းချက်များနှင့် အာမခံလိုအပ်ချက်များကို သင့်တက္ကသိုလ်နှင့် သက်ဆိုင်ရာအာဏာပိုင်များထံ တိုက်ရိုက်အတည်ပြုပါ။ ကြိုတင်စီစဉ်နိုင်ရန် ပေးချေရမည့်နောက်ဆုံးရက်များကို မှတ်သားထားပါ။</p>
+      </article>
+      <article class="card">
+        <h3 class="lang-en">Employment expectations</h3><h3 class="lang-my">အလုပ်အကိုင်နှင့်ပတ်သက်သော မျှော်မှန်းချက်များ</h3>
+        <p class="lang-en">Students with a residence permit for studies may work in paid employment for an average of 30 hours per week. This does not mean that a job is guaranteed. Consider language requirements, competition and the time needed to find work. Do not build your essential budget around income you have not secured.</p>
+        <p class="lang-my">ပညာသင်ရန် နေထိုင်ခွင့်ရရှိထားသော ကျောင်းသားများသည် အခကြေးငွေရသော အလုပ်ကို ပျမ်းမျှ တစ်ပတ်လျှင် နာရီ ၃၀ လုပ်ကိုင်နိုင်သည်။ သို့သော် အလုပ်ရရှိမည်ဟု အာမခံခြင်း မဟုတ်ပါ။ ဘာသာစကားလိုအပ်ချက်၊ အလုပ်အကိုင်ယှဉ်ပြိုင်မှုနှင့် အလုပ်ရှာဖွေရန် လိုအပ်သောအချိန်ကို ထည့်သွင်းစဉ်းစားပါ။ မရရှိသေးသော ဝင်ငွေကို အခြေခံပြီး မဖြစ်မနေကုန်ကျစရိတ်များအတွက် ဘတ်ဂျက်မဆွဲပါနှင့်။</p>
+        <p><a href="https://migri.fi/en/working-and-internships-during-studies" target="_blank" rel="noopener">Migri: Working and internships during studies</a></p>
+        <p class="lang-en"> It is important to note that there has been a rising of unemployment in Finland. And based on the survey findings by the author about students' income, most rely on family support. So it may be difficult to have an income from part-time employment as a student and the plan shouldn't really be based around part-time employment when coming to Finland.</p>
+        <p class="lang-my">ဖင်လန်နိုင်ငံတွင် အလုပ်လက်မဲ့နှုန်း မြင့်တက်လာနေကြောင်း သတိပြုရန် အရေးကြီးပါသည်။ ထို့အပြင် စာရေးသူက ကောက်ယူခဲ့သော စစ်တမ်းရလဒ်များအရ ကျောင်းသားအများစုသည် မိသားစုထံမှ ငွေကြေးထောက်ပံ့မှုကို အဓိကအားထားနေရကြောင်း တွေ့ရှိရပါသည်။ ထို့ကြောင့် ကျောင်းသားတစ်ဦးအနေဖြင့် အချိန်ပိုင်းအလုပ်မှ ဝင်ငွေရရှိရန် ခက်ခဲနိုင်ပါသည်။ ဖင်လန်နိုင်ငံသို့ ပညာသင်ရန် လာရောက်ရန် စီစဉ်သည့်အခါ အချိန်ပိုင်းအလုပ်မှ ရရှိမည့်ဝင်ငွေကို အဓိကအားထား၍ ငွေကြေးအစီအစဉ် မရေးဆွဲသင့်ပါ။</p>
+      </article>
+    </div>
+    <div class="callout">
+      <strong class="lang-en">Important:</strong><strong class="lang-my">အရေးကြီးသည် -</strong>
+      <span class="lang-en">This guide is educational and does not replace official immigration or university instructions. Always verify current requirements with the relevant authority.</span>
+      <span class="lang-my">ဤလမ်းညွှန်သည် ပညာပေးရည်ရွယ်ချက်အတွက်သာဖြစ်ပြီး လူဝင်မှုကြီးကြပ်ရေး သို့မဟုတ် တက္ကသိုလ်၏ တရားဝင်ညွှန်ကြားချက်များကို အစားမထိုးပါ။ လက်ရှိလိုအပ်ချက်များကို သက်ဆိုင်ရာအာဏာပိုင်ထံ အမြဲအတည်ပြုပါ။</span>
+    </div>
+  </section>
 
-        <p>
-            A practical financial guide for Burmese students planning to study
-            in Finland and students already studying in Finland.
-        </p>
+  <section class="section" id="manage">
+    <div class="section-head">
+      <div class="kicker">03 · Current students in Finland</div>
+      <h2 class="lang-en">Managing your money while studying</h2>
+      <h2 class="lang-my">ပညာသင်နေစဉ် ငွေကြေးစီမံခန့်ခွဲခြင်း</h2>
+      <p class="lead lang-en">A budget is not about limiting or predicting every expense perfectly. It is a way to understand what money comes in, where it goes and what you may need to adjust.</p>
+      <p class="lead lang-my">ဘတ်ဂျက်ဆိုသည်မှာ ကုန်ကျစရိတ်တိုင်းကို အတိအကျ ကြိုတင်ခန့်မှန်းခြင်း မဟုတ်ပါ။ ဝင်ငွေမည်မျှရရှိသည်၊ ငွေများကို မည်သည့်နေရာတွင် သုံးစွဲနေသည်၊ မည်သည့်အရာများကို ပြင်ဆင်ရန်လိုအပ်သည်ကို နားလည်စေသော နည်းလမ်းတစ်ခုဖြစ်သည်။</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <h3 class="lang-en">1. Understand your available income</h3><h3 class="lang-my">၁။ ရရှိနိုင်သော ဝင်ငွေကို နားလည်ပါ</h3>
+        <p class="lang-en">List the money you can realistically use each month, such as family support, savings, employment income or scholarships. Separate regular income from occasional or uncertain money.</p>
+        <p class="lang-my">မိသားစုထောက်ပံ့ငွေ၊ စုဆောင်းငွေ၊ အလုပ်ဝင်ငွေ သို့မဟုတ် ပညာသင်ဆုကဲ့သို့ လစဉ် အမှန်တကယ်အသုံးပြုနိုင်သော ငွေများကို စာရင်းပြုစုပါ။ ပုံမှန်ရရှိသောဝင်ငွေနှင့် ရံဖန်ရံခါ သို့မဟုတ် မသေချာသောငွေများကို ခွဲခြားပါ။</p>
+        <p class="lang-en">Take note of a popular quote, "Cash is king". Without cash in hand, it's difficult and risky to manage your finances living abroad. There is nothing you can do without any money to use.</p>
+        <p class="lang-my">ငွေသားသည် အရေးအကြီးဆုံးဖြစ်သည်” (Cash is King) ဟူသော လူသိများသည့် ဆိုရိုးစကားကို သတိပြုထားပါ။ နိုင်ငံခြားတွင် နေထိုင်စဉ် လက်ဝယ်အသုံးပြုနိုင်သော ငွေကြေးမရှိပါက သင်၏ငွေကြေးအခြေအနေကို စီမံခန့်ခွဲရန် ခက်ခဲသည့်အပြင် အန္တရာယ်လည်း များနိုင်ပါသည်။အသုံးပြုရန် ငွေတစ်ပြားတစ်ချပ်မျှ မရှိပါက မည်သည့်အရာကိုမျှ လုပ်ဆောင်နိုင်မည်မဟုတ်ပါ။</p>
+      </article>
+      <article class="card">
+        <h3 class="lang-en">2. Understand your expenses and cash flow</h3><h3 class="lang-my">၂။ သင်၏ အသုံးစရိတ်များနှင့် ငွေသားစီးဆင်းမှုကို နားလည်ပါ</h3>
+        <p class="lang-en">List your expenses, including rent, food, transportation, study costs and personal spending. Compare your total income with your total expenses to understand your cash flow. This helps you see how much money you have available, whether you are spending more than you receive, and how long your available funds can support your living expenses. Track how your money is moving.</p>
+        <p class="lang-my">အိမ်ငှားခ၊ အစားအသောက်၊ သယ်ယူပို့ဆောင်ရေး၊ ပညာသင်စရိတ်နှင့် ကိုယ်ပိုင်အသုံးစရိတ်များ အပါအဝင် သင်၏ အသုံးစရိတ်အားလုံးကို စာရင်းပြုစုပါ။ ထို့နောက် သင်၏ စုစုပေါင်းဝင်ငွေနှင့် စုစုပေါင်းအသုံးစရိတ်ကို နှိုင်းယှဉ်ပြီး ငွေသားစီးဆင်းမှုအခြေအနေကို သိရှိအောင် လုပ်ဆောင်ပါ။
 
-        <a href="#guide" class="btn">
-            Start your financial preparation →
-        </a>
+ဤသို့ပြုလုပ်ခြင်းဖြင့် သင့်တွင် အသုံးပြုရန် ငွေမည်မျှကျန်ရှိသည်၊ ရရှိသောဝင်ငွေထက် ပိုမိုသုံးစွဲနေခြင်း ရှိ၊ မရှိနှင့် လက်ရှိရှိနေသော ငွေကြေးဖြင့် နေထိုင်စရိတ်များကို မည်မျှကြာကြာ ဆက်လက်ကာမိနိုင်မည်ကို သိရှိနိုင်ပါသည်။
+
+သင့်ငွေကြေးများ မည်သို့ဝင်လာပြီး မည်သို့ထွက်သွားသည်ကို ပုံမှန်ခြေရာခံစစ်ဆေးပါ။</p> 
+      </article>
+      <article class="card">
+        <h3 class="lang-en">3. Track your spending</h3><h3 class="lang-my">၃။ အသုံးစရိတ်များကို မှတ်တမ်းတင်ပါ</h3>
+        <p class="lang-en">Record your expenses regularly using a spreadsheet, banking app or simple notes. Review the records to see whether your actual spending matches your plan. (Nowadays, AI can be used to help with budgeting easily so it is recommended to consider it.)</p>
+        <p class="lang-my">Spreadsheet၊ ဘဏ်အက်ပ် သို့မဟုတ် ရိုးရှင်းသောမှတ်စုများကို အသုံးပြုပြီး အသုံးစရိတ်များကို ပုံမှန်မှတ်တမ်းတင်ပါ။ အမှန်တကယ်သုံးစွဲမှုသည် သင့်အစီအစဉ်နှင့် ကိုက်ညီမှုရှိမရှိ ပြန်လည်စစ်ဆေးပါ။ ယနေ့ခေတ်တွင် AI ကို အသုံးပြု၍ ငွေကြေးဘတ်ဂျက်ကို အလွယ်တကူ ရေးဆွဲစီမံနိုင်ပြီဖြစ်သောကြောင့် ဘတ်ဂျက်ရေးဆွဲရာတွင် AI ၏အကူအညီကို အသုံးပြုရန်လည်း စဉ်းစားသင့်ပါသည်။</p>
+        <p class="lang-en">Many students reported on finding themselves spending unnecessarily, based on the survey findings by the author. It is very understandable that most students are young and inexperienced in managing their finances. But you should be very mindful of your spendings while abroad if you don't have a stable income.</p>
+        <p class="lang-my">စာရေးသူက ကောက်ယူခဲ့သော စစ်တမ်းရလဒ်များအရ ကျောင်းသားအများအပြားသည် မလိုအပ်ဘဲ ငွေသုံးစွဲမိကြောင်း ဖော်ပြခဲ့ကြပါသည်။ ကျောင်းသားအများစုသည် အသက်ငယ်ရွယ်ပြီး ကိုယ်ပိုင်ငွေကြေးကို စီမံခန့်ခွဲရာတွင် အတွေ့အကြုံနည်းပါးကြသေးသည့်အတွက် ထိုသို့ဖြစ်ရခြင်းမှာ နားလည်နိုင်ပါသည်။ သို့သော် နိုင်ငံခြားတွင် ပညာသင်ကြားနေထိုင်စဉ် ပုံမှန်ဝင်ငွေတစ်ခု မရှိပါက မိမိ၏ အသုံးစရိတ်များကို အထူးဂရုပြု၍ စီမံခန့်ခွဲရန် အလွန်အရေးကြီးပါသည်။</p>
+      </article>
+      <article class="card">
+        <h3 class="lang-en">4. Prepare for irregular expenses</h3><h3 class="lang-my">၄။ ပုံမှန်မဟုတ်သော ကုန်ကျစရိတ်များအတွက် ပြင်ဆင်ပါ</h3>
+        <p class="lang-en">Some expenses do not occur every month, such as travel, health-related costs or annual payments. Estimate them in advance and set aside money when possible.</p>
+        <p class="lang-my">ခရီးစရိတ်၊ ကျန်းမာရေးဆိုင်ရာကုန်ကျစရိတ် သို့မဟုတ် နှစ်စဉ်ပေးချေရသောငွေများကဲ့သို့ အချို့ကုန်ကျစရိတ်များသည် လစဉ်မဖြစ်ပေါ်ပါ။ ကြိုတင်ခန့်မှန်းပြီး ဖြစ်နိုင်ပါက ငွေသီးသန့်ဖယ်ထားပါ။</p>
+        <p class="lang-en"> </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="risks">
+    <div class="section-head">
+      <div class="kicker">04 · Financial risks and scenarios</div>
+      <h2 class="lang-en">What could change your financial situation?</h2>
+      <h2 class="lang-my">သင့်ငွေကြေးအခြေအနေကို မည်သည့်အရာများက ပြောင်းလဲစေနိုင်သလဲ။</h2>
+      <p class="lead lang-en">Thinking through possible changes before they happen can help you make a more realistic plan.</p>
+      <p class="lead lang-my">ဖြစ်လာနိုင်သော အပြောင်းအလဲများကို ကြိုတင်စဉ်းစားခြင်းသည် ပိုမိုလက်တွေ့ကျသော အစီအစဉ်တစ်ခု ပြုလုပ်နိုင်ရန် ကူညီပေးသည်။</p>
+    </div>
+    <div class="scenario">
+      <h3 class="lang-en">Scenario: Your monthly expenses increase</h3><h3 class="lang-my">ဖြစ်နိုင်သည့်အခြေအနေ - သင့်လစဉ်ကုန်ကျစရိတ်များ မြင့်တက်လာသည်</h3>
+      <p class="lang-en">Imagine that your monthly expenses increase, but your available income stays the same. Before making a decision, identify which expenses are essential, which can be reduced and whether you have savings available.</p>
+      <p class="lang-my">သင့်လစဉ်ကုန်ကျစရိတ်များ မြင့်တက်လာသော်လည်း ရရှိနိုင်သောဝင်ငွေမှာ မပြောင်းလဲဟု စဉ်းစားကြည့်ပါ။ ဆုံးဖြတ်ချက်မချမီ မဖြစ်မနေကုန်ကျစရိတ်များ၊ လျှော့ချနိုင်သောကုန်ကျစရိတ်များနှင့် အသုံးပြုနိုင်သော စုဆောင်းငွေရှိမရှိကို ခွဲခြားပါ။</p>
+     
+    </div>
+    <div class="scenario">
+      <h3 class="lang-en">Scenario: Myanmar Kyat (MMK) value decreases rapidly</h3><h3 class="lang-my">ဖြစ်နိုင်သည့်အခြေအနေ - မြန်မာကျပ်ငွေ (MMK) တန်ဖိုး လျင်မြန်စွာ ကျဆင်းလာခြင်း</h3>
+      <p class="lang-en">Imagine you use family support or income from Myanmar and the Myanmar Kyat loses value against the euro. As a result, the same amount of money converted from MMK now provides fewer euros than before. This is the most possible scenario to happen due to the situation of Myanmar, so consider this carefully if you don't have a stable euro-based income.</p>
+      <p class="lang-my">သင်သည် မြန်မာနိုင်ငံမှ မိသားစုထောက်ပံ့ငွေ သို့မဟုတ် ဝင်ငွေကို အားထားနေရသည်ဟု စိတ်ကူးကြည့်ပါ။ မြန်မာကျပ်ငွေတန်ဖိုးသည် ယူရိုနှင့် နှိုင်းယှဉ်ပါက ကျဆင်းသွားသည့်အခါ ယခင်ကကဲ့သို့ မြန်မာကျပ်ငွေပမာဏတူညီသော်လည်း ယူရိုသို့ လဲလှယ်လိုက်ပါက ယခင်ထက် ယူရိုငွေ ပိုမိုနည်းပါးစွာသာ ရရှိတော့မည်ဖြစ်သည်။ မြန်မာနိုင်ငံ၏ လက်ရှိအခြေအနေများကြောင့် ဤကဲ့သို့သော အခြေအနေမျိုး ဖြစ်ပေါ်လာနိုင်ခြေ အလွန်များပါသည်။ ထို့ကြောင့် ယူရိုငွေဖြင့် ပုံမှန်ဝင်ငွေတစ်ခု မရှိပါက ဤအန္တရာယ်ကို သေချာစွာ ထည့်သွင်းစဉ်းစားပြီး ကြိုတင်ပြင်ဆင်ထားသင့်ပါသည်။</p>
+      
+    </div>
+        <div class="scenario">
+      <h3 class="lang-en">Scenario: You cannot find work or maintain work</h3><h3 class="lang-my">ဖြစ်နိုင်သည့်အခြေအနေ - ကျောင်းတက်နေစဉ် အချိန်ပိုင်းအလုပ် မရရှိခြင်း သို့မဟုတ် အလုပ်ဆက်လက်မလုပ်ကိုင်နိုင်ခြင်း</h3>
+      <p class="lang-en">Imagine that you currently rely partly on income from a part-time job. However, you are unable to find or maintain employment during your studies. This is another important scenario to consider. </p>
+      <p class="lang-my">လက်ရှိတွင် သင်သည် အချိန်ပိုင်းအလုပ်မှ ရရှိသောဝင်ငွေကို တစ်စိတ်တစ်ပိုင်း အားထားနေရသည်ဟု စိတ်ကူးကြည့်ပါ။ သို့သော် ပညာသင်ကြားနေစဉ် အလုပ်ရှာမရခြင်း သို့မဟုတ် ရရှိထားသောအလုပ်ကို ဆက်လက်လုပ်ကိုင်နိုင်ခြင်းမရှိသည့် အခြေအနေမျိုး ကြုံတွေ့လာနိုင်ပါသည်။ ဤအခြေအနေသည်လည်း ကြိုတင်ထည့်သွင်းစဉ်းစားထားသင့်သည့် အရေးကြီးသော အန္တရာယ်တစ်ခုဖြစ်ပါသည်။</p>
+    </div>
+
+      <div class="scenario">
+      <h3 class="lang-en">Scenario: Your have to pay for something unexpected</h3><h3 class="lang-my">ဖြစ်နိုင်သည့်အခြေအနေ - မမျှော်လင့်ထားသော ကုန်ကျစရိတ်</h3>
+      <p class="lang-en">Imagine that you suddenly need to pay an unexpected expense of €300. Whether it be medical, damages, loss. Do you have money set aside for such situations? It is important to be prepared. Set aside money for "emergency funds".</p>
+      <p class="lang-my">ဥပမာအားဖြင့် ဆေးကုသစရိတ်၊ ပစ္စည်းပျက်စီးမှုကြောင့် ကုန်ကျစရိတ် သို့မဟုတ် ပစ္စည်းပျောက်ဆုံးမှု စသည့် မမျှော်လင့်ထားသော အသုံးစရိတ် ယူရို ၃၀၀ ကို ရုတ်တရက် ပေးချေရမည်ဟု စိတ်ကူးကြည့်ပါ။ ထိုကဲ့သို့သော အခြေအနေမျိုး ကြုံတွေ့လာပါက အသုံးပြုနိုင်ရန် သီးသန့်ဖယ်ထားသော ငွေကြေး ရှိပါသလား။ ဤကဲ့သို့သော မမျှော်လင့်ထားသည့် အခြေအနေများအတွက် ကြိုတင်ပြင်ဆင်ထားရန် အရေးကြီးပါသည်။ ထို့ကြောင့် အရေးပေါ်အသုံးစရိတ်များအတွက် ငွေကြေးကို ပုံမှန်စုဆောင်းပြီး သီးသန့်ဖယ်ထားပါ။</p>
+    </div>
+
+  </section>
+
+  <section class="section" id="tools">
+    <div class="section-head">
+      <div class="kicker">05 · Practical checklist</div>
+      <h2 class="lang-en">Checklist: Will you be able to maintain your living as a student in Finland as a Burmese?</h2>
+      <h2 class="lang-my">စစ်ဆေးရန်စာရင်း - မြန်မာနိုင်ငံသားတစ်ဦးအနေဖြင့် ဖင်လန်နိုင်ငံတွင် ကျောင်းသားဘဝကို ငွေကြေးအရ ရေရှည်ရပ်တည်နိုင်ပါမည်လား။</h2>
+      <p class="lead lang-en">Use this checklist to identify what you have already considered and what you still need to investigate.</p>
+      <p class="lead lang-my">စဉ်းစားပြီးသောအချက်များနှင့် ထပ်မံလေ့လာရန်လိုအပ်သောအချက်များကို သိရှိရန် ဤစာရင်းကို အသုံးပြုပါ။</p>
+    </div>
+    <div class="card checklist">
+      <label><input type="checkbox"><span class="lang-en">I have estimated tuition and living costs for the full study period.</span><span class="lang-my">ပညာသင်ကာလတစ်ခုလုံးအတွက် ကျောင်းလခနှင့် နေထိုင်စရိတ်ကို ခန့်မှန်းထားသည်။</span></label>
+      <label><input type="checkbox"><span class="lang-en">I have checked what my scholarship or financial support actually covers.</span><span class="lang-my">ပညာသင်ဆု သို့မဟုတ် ငွေကြေးထောက်ပံ့မှုက မည်သည့်အရာများကို ကာမိသည်ကို စစ်ဆေးထားသည်။</span></label>
+      <label><input type="checkbox"><span class="lang-en">I will be able to finish my studies in Finland without significant financial difficulties.</span><span class="lang-my">ဖင်လန်နိုင်ငံတွင် ပညာသင်ကြားနေစဉ် သိသာထင်ရှားသော ငွေကြေးအခက်အခဲများ မကြုံတွေ့ဘဲ ပညာသင်ကြားမှုကို အဆုံးသတ်နိုင်မည်ဟု ယုံကြည်ပါသည်။</span></label>
+      <label><input type="checkbox"><span class="lang-en">I have considered exchange-rate changes and possible delays or reductions in funds.</span><span class="lang-my">ငွေလဲနှုန်းပြောင်းလဲမှုနှင့် ငွေကြေးရရှိမှု နောက်ကျခြင်း သို့မဟုတ် လျော့နည်းခြင်းတို့ကို ထည့်သွင်းစဉ်းစားထားသည်။</span></label>
+      <label><input type="checkbox"><span class="lang-en">I have a realistic plan that does not depend on immediately finding a job.</span><span class="lang-my">ချက်ချင်းအလုပ်ရရှိမည်ဟု မယူဆထားသော လက်တွေ့ကျသည့် အစီအစဉ်တစ်ခု ရှိသည်။</span></label>
+      <label><input type="checkbox"><span class="lang-en">I know where to check current official requirements for Finland.</span><span class="lang-my">ဖင်လန်၏ လက်ရှိတရားဝင်လိုအပ်ချက်များကို မည်သည့်နေရာတွင် စစ်ဆေးရမည်ကို သိရှိထားသည်။</span></label>
+      <label><input type="checkbox"><span class="lang-en">I can afford it until the end. </span><span class="lang-my">အဆုံးအထိ ပညာသင်ကြားနိုင်ရန် လိုအပ်သော ကုန်ကျစရိတ်များကို ကျွန်ုပ် တတ်နိုင်ပါသည်။</span></label>
+
+    </div>
+  </section>
+
+  <section class="section" id="resources">
+    <div class="section-head">
+      <div class="kicker">06 · Further information</div>
+      <h2 class="lang-en">Use reliable and up-to-date sources</h2>
+      <h2 class="lang-my">ယုံကြည်စိတ်ချရပြီး နောက်ဆုံးရ အချက်အလက်များကို အသုံးပြုပါ</h2>
+      <p class="lead lang-en">Requirements, fees and rules may change. Confirm important details with official sources before making financial or study decisions.</p>
+      <p class="lead lang-my">လိုအပ်ချက်များ၊ အခကြေးငွေများနှင့် စည်းမျဉ်းများသည် ပြောင်းလဲနိုင်သည်။ ပညာရေး သို့မဟုတ် ငွေကြေးဆိုင်ရာ ဆုံးဖြတ်ချက်များ မချမီ အရေးကြီးသောအချက်အလက်များကို တရားဝင်ရင်းမြစ်များထံ အတည်ပြုပါ။</p>
+    </div>
+    <ul class="resource-list">
+      <li><a href="https://migri.fi/en/home" target="_blank" rel="noopener">Finnish Immigration Service (Migri)</a> — residence permits and financial requirements.</li>
+      <li><a href="https://www.studyinfinland.fi/" target="_blank" rel="noopener">Study in Finland</a> — information about studying and living in Finland.</li>
+      <li><a href="https://www.kela.fi/" target="_blank" rel="noopener">Kela</a> — information about social security and student-related benefits where applicable.</li>
+      <li><a href="https://www.infofinland.fi/" target="_blank" rel="noopener">InfoFinland</a> — practical information about life in Finland.</li>
+    </ul>
+    <p class="bilingual-note lang-en">This guide is for general educational purposes. It is not legal, immigration, tax or individual financial advice. Always check current rules and your own circumstances.</p>
+    <p class="bilingual-note lang-my">ဤလမ်းညွှန်သည် အထွေထွေပညာပေးရည်ရွယ်ချက်အတွက်သာ ဖြစ်သည်။ ဥပဒေ၊ လူဝင်မှုကြီးကြပ်ရေး၊ အခွန် သို့မဟုတ် တစ်ဦးချင်းငွေကြေးအကြံပေးချက် မဟုတ်ပါ။ လက်ရှိစည်းမျဉ်းများနှင့် မိမိ၏အခြေအနေကို အမြဲစစ်ဆေးပါ။</p>
+  </section>
+
+  <section class="section" id="notes">
+      <div class="section-head">
+       <div class="kicker">07 · A note from the author</div> 
+       <p class="lang-en">To study abroad has been exciting and an opportunity for young people in Myanmar, to escape the crisis of the country for a better life. Not many people have the opportunity or ability to do so as it comes with great financial responsibilites and uncertainities. As a Burmese student myself, I emphaise these concerns. I have encountered other Burmese students in Finland facing similar difficulities, young people and parents online asking around for information to prepare for studying in Finland.   </p>
+       <p class="lang-my">နိုင်ငံခြားတွင် ပညာသင်ကြားခြင်းသည် မြန်မာနိုင်ငံရှိ လူငယ်များအတွက် စိတ်လှုပ်ရှားဖွယ်ရာ အခွင့်အလမ်းတစ်ခုဖြစ်ပြီး မိမိတို့နိုင်ငံ၏ လက်ရှိအကျပ်အတည်းများမှ ရုန်းထွက်ကာ ပိုမိုကောင်းမွန်သော ဘဝတစ်ခုကို ရှာဖွေနိုင်မည့် အခွင့်အရေးတစ်ခုလည်း ဖြစ်ပါသည်။ သို့သော် နိုင်ငံခြားတွင် ပညာသင်ကြားရန်အတွက် ကြီးမားသော ငွေကြေးဆိုင်ရာ တာဝန်ယူမှုများနှင့် မသေချာမရေရာမှုများ ရှိနေသောကြောင့် လူတိုင်းတွင် ထိုအခွင့်အရေး သို့မဟုတ် ငွေကြေးတတ်နိုင်မှု မရှိကြပါ။ မြန်မာကျောင်းသူတစ်ဦးဖြစ်သည့် ကျွန်မအနေဖြင့်လည်း ဤစိုးရိမ်ပူပန်မှုများကို ကောင်းစွာနားလည်ပါသည်။ ဖင်လန်နိုင်ငံတွင် အလားတူအခက်အခဲများကို ရင်ဆိုင်နေရသော မြန်မာကျောင်းသား၊ ကျောင်းသူများနှင့် တွေ့ဆုံခဲ့ရသကဲ့သို့ ဖင်လန်နိုင်ငံတွင် ပညာသင်ကြားရန် ကြိုတင်ပြင်ဆင်နိုင်ရေးအတွက် သတင်းအချက်အလက်များကို အွန်လိုင်းပေါ်တွင် မေးမြန်းရှာဖွေနေကြသော လူငယ်များနှင့် မိဘများကိုလည်း တွေ့မြင်ခဲ့ရပါသည်။</p>
+       <p class="lang-en">So i created this guide for my thesis in a bachelor's degree at Haaga-Helia UAS, to help other Burmese international students and those who plan to study in Finland in the future and to also provide information to the parents and adults . This will help them make more informed financial decisions before and during their studies abroad in Finland. Some of the information are also based on my research findings. I hope it provides practical and useful information that can help students prepare for different financial situations.</p>
+       <p class="lang-my">ထို့ကြောင့် ကျွန်မသည် Haaga-Helia အသုံးချသိပ္ပံတက္ကသိုလ် (Haaga-Helia UAS) တွင် ဘွဲ့ကြိုဒီဂရီအတွက် ရေးသားပြုစုနေသော ကျွန်မ၏ ဘွဲ့ကြိုစာတမ်း (Bachelor’s Thesis) ၏ တစ်စိတ်တစ်ပိုင်းအဖြစ် ဤလမ်းညွှန်ကို ဖန်တီးခဲ့ပါသည်။ ဤလမ်းညွှန်သည် ဖင်လန်နိုင်ငံတွင် ပညာသင်ကြားနေကြသော အခြားမြန်မာနိုင်ငံသား နိုင်ငံတကာကျောင်းသားများနှင့် အနာဂတ်တွင် ဖင်လန်နိုင်ငံ၌ ပညာသင်ကြားရန် စီစဉ်နေသူများကို ကူညီပေးရန် ရည်ရွယ်ပါသည်။ ထို့အပြင် ကျောင်းသားများ၏ မိဘများနှင့် လူကြီးများအတွက်လည်း လိုအပ်သော သတင်းအချက်အလက်များကို ပေးစွမ်းနိုင်ရန် ရည်ရွယ်ပါသည်။ ဤလမ်းညွှန်မှတစ်ဆင့် ဖင်လန်နိုင်ငံတွင် ပညာသင်ကြားရန် နိုင်ငံခြားသို့ မထွက်ခွာမီနှင့် ပညာသင်ကြားနေစဉ်အတွင်း ပိုမိုသိရှိနားလည်ပြီး သင့်လျော်သော ငွေကြေးဆိုင်ရာ ဆုံးဖြတ်ချက်များကို ချမှတ်နိုင်ရန် အထောက်အကူပြုမည်ဟု မျှော်လင့်ပါသည်။ ဤလမ်းညွှန်ပါ အချက်အလက်အချို့သည် ကျွန်မ၏ သုတေသနမှ ရရှိသော တွေ့ရှိချက်များအပေါ်တွင်လည်း အခြေခံထားပါသည်။ ကျောင်းသားများအနေဖြင့် မတူညီသော ငွေကြေးဆိုင်ရာ အခြေအနေများအတွက် ကြိုတင်ပြင်ဆင်နိုင်ရန် လက်တွေ့အသုံးဝင်ပြီး အထောက်အကူဖြစ်စေမည့် အချက်အလက်များကို ဤလမ်းညွှန်မှ ပေးစွမ်းနိုင်မည်ဟု မျှော်လင့်ပါသည်။
+       <p class="lang-en">My intention is not to discourage anyone from pursuing an international education, but to encourage realistic financial planning. Having a clear understanding of your finances before making such an important commitment can make a significant difference throughout your studies and life.</p>
+       <p class="lang-my">ကျွန်မ၏ ရည်ရွယ်ချက်မှာ မည်သူတစ်ဦးတစ်ယောက်ကိုမျှ နိုင်ငံတကာပညာရေးကို လိုက်စားရန် စိတ်ဓာတ်ကျဆင်းစေလိုခြင်း မဟုတ်ပါ။ လက်တွေ့ကျသော ငွေကြေးအစီအစဉ်များ ကြိုတင်ရေးဆွဲထားရန် တိုက်တွန်းလိုခြင်းသာ ဖြစ်ပါသည်။ ဤကဲ့သို့ အရေးကြီးသော ဆုံးဖြတ်ချက်တစ်ခုကို မချမှတ်မီ မိမိ၏ ငွေကြေးအခြေအနေကို ရှင်းလင်းစွာ နားလည်ထားခြင်းသည် ပညာသင်ကြားနေစဉ်တစ်လျှောက်နှင့် နေ့စဉ်ဘဝတွင် သိသာထင်ရှားသော အကျိုးသက်ရောက်မှုများ ရှိစေနိုင်ပါသည်။</p>
+       <p class="lang-en">Remember, studying abroad is a long-term commitment. Plan ahead, understand your finances and be prepared for uncertainty.</p>
+       <p class="lang-my">သတိပြုရန်မှာ နိုင်ငံခြားတွင် ပညာသင်ကြားခြင်းသည် ရေရှည်တာဝန်ယူရမည့် ဆုံးဖြတ်ချက်တစ်ခုဖြစ်ပါသည်။ ထို့ကြောင့် ကြိုတင်စီစဉ်ပါ၊ မိမိ၏ ငွေကြေးအခြေအနေကို သေချာနားလည်ပါ၊ မမျှော်လင့်ထားသော အခြေအနေများကိုလည်း ရင်ဆိုင်နိုင်ရန် ပြင်ဆင်ထားပါ။ </p>
+       <p class="lang-en">Lastly, for those planning to study in Finland, remember that circumstances can change, and things may not always go as expected.  Stay prepared and be ready to adapt. For those already in Finland, do not put too much pressure on yourselves. Financial planning is important, but so is enjoying life. There is more to student life than managing money. Enjoy your time, make memories, and do not let difficult circumstances discourage you from moving forward. </p>
+       <p class="lang-my">နောက်ဆုံးအနေဖြင့် ဖင်လန်နိုင်ငံတွင် ပညာသင်ကြားရန် စီစဉ်နေသူများအနေဖြင့် အခြေအနေများသည် အချိန်နှင့်အမျှ ပြောင်းလဲနိုင်ပြီး မိမိမျှော်လင့်ထားသည့်အတိုင်း အမြဲတမ်း ဖြစ်လာမည်မဟုတ်ကြောင်း သတိပြုထားပါ။ ထို့ကြောင့် ကြိုတင်ပြင်ဆင်ထားပြီး ပြောင်းလဲလာသော အခြေအနေများနှင့်အညီ လိုက်လျောညီထွေဖြစ်အောင် နေထိုင်တတ်ရန် အရေးကြီးပါသည်။ ဖင်လန်နိုင်ငံတွင် ရောက်ရှိနေပြီး ပညာသင်ကြားနေသူများအနေဖြင့်လည်း မိမိကိုယ်ကို ဖိအားအလွန်အကျွံ မပေးကြပါနှင့်။ ငွေကြေးစီမံခန့်ခွဲမှုသည် အရေးကြီးသော်လည်း ဘဝကို ပျော်ရွှင်စွာ ဖြတ်သန်းနိုင်ရန်လည်း အရေးကြီးပါသည်။ ကျောင်းသားဘဝဆိုသည်မှာ ငွေကြေးကို စီမံခန့်ခွဲရုံသက်သက် မဟုတ်ပါ။ မိမိ၏ အချိန်များကို ပျော်ရွှင်စွာ ဖြတ်သန်းပါ၊ အမှတ်တရကောင်းများ ဖန်တီးပါ၊ အခက်အခဲများကြောင့် စိတ်ဓာတ်ကျပြီး ရှေ့ဆက်လျှောက်လှမ်းရန် လက်မလျှော့လိုက်ပါနှင့်။</p>
+
+       </div>
 
     </section>
-
-    <section class="container" id="guide">
-
-        <h2 class="section-title">
-            Explore the Guide
-        </h2>
-
-        <div class="grid">
-
-            <div class="card" onclick="showPage('before')">
-                <div class="card-icon">✈️</div>
-                <h3>Before Studying in Finland</h3>
-                <p>Assess your finances before making a decision.</p>
-            </div>
-
-            <div class="card" onclick="showPage('preparing')">
-                <div class="card-icon">📋</div>
-                <h3>Preparing for Finland</h3>
-                <p>Understand the costs in Finland.</p>
-            </div>
-
-            <div class="card" onclick="showPage('money')">
-                <div class="card-icon">💰</div>
-                <h3>Managing Money</h3>
-                <p>Plan your income and everyday expenses.</p>
-            </div>
-
-            <div class="card" onclick="showPage('risks')">
-                <div class="card-icon">⚠️</div>
-                <h3>Financial Risks</h3>
-                <p>Prepare for unexpected financial challenges.</p>
-            </div>
-
-            <div class="card" onclick="showPage('tools')">
-                <div class="card-icon">🧮</div>
-                <h3>Practical Tools</h3>
-                <p>Useful tools for financial planning.</p>
-            </div>
-
-            <div class="card" onclick="showPage('resources')">
-                <div class="card-icon">📚</div>
-                <h3>Resources</h3>
-                <p>Official information and useful links.</p>
-            </div>
-
-        </div>
-
-    </section>
-
-</div>
-
-<!-- BEFORE STUDYING -->
-
-<section id="before" class="page">
-
-    <button class="back-btn" onclick="goHome()">
-        ← Back
-    </button>
-
-    <h2>Before Studying in Finland</h2>
-
-    <p>
-        This section helps prospective students evaluate whether they are
-        financially prepared to study in Finland.
-    </p>
-
-    <ul>
-        <li>Tuition fees</li>
-        <li>Residence permit financial requirements</li>
-        <li>Scholarships</li>
-        <li>Estimated living costs</li>
-        <li>Emergency funds</li>
-    </ul>
-
-</section>
-
-<!-- PREPARING -->
-
-<section id="preparing" class="page">
-
-    <button class="back-btn" onclick="goHome()">
-        ← Back
-    </button>
-
-    <h2>Preparing for Finland</h2>
-
-    <ul>
-        <li>Flight costs</li>
-        <li>Housing deposits</li>
-        <li>Health insurance</li>
-        <li>Opening bank accounts</li>
-        <li>Arrival checklist</li>
-    </ul>
-
-</section>
-
-<!-- MONEY -->
-
-<section id="money" class="page">
-
-    <button class="back-btn" onclick="goHome()">
-        ← Back
-    </button>
-
-    <h2>Managing Money</h2>
-
-    <ul>
-        <li>Budgeting techniques</li>
-        <li>Tracking spending</li>
-        <li>Part-time income management</li>
-        <li>Saving strategies</li>
-    </ul>
-
-</section>
-
-<!-- RISKS -->
-
-<section id="risks" class="page">
-
-    <button class="back-btn" onclick="goHome()">
-        ← Back
-    </button>
-
-    <h2>Financial Risks</h2>
-
-    <ul>
-        <li>Inflation</li>
-        <li>Currency fluctuations</li>
-        <li>Rent increases</li>
-        <li>Unexpected expenses</li>
-    </ul>
-
-</section>
-
-<!-- TOOLS -->
-
-<section id="tools" class="page">
-
-    <button class="back-btn" onclick="goHome()">
-        ← Back
-    </button>
-
-    <h2>Practical Tools</h2>
-
-    <ul>
-        <li>Budget Calculator</li>
-        <li>Savings Goal Calculator</li>
-        <li>Emergency Fund Calculator</li>
-    </ul>
-
-</section>
-
-<!-- RESOURCES -->
-
-<section id="resources" class="page">
-
-    <button class="back-btn" onclick="goHome()">
-        ← Back
-    </button>
-
-    <h2>Resources</h2>
-
-    <ul>
-        <li>Migri</li>
-        <li>Kela</li>
-        <li>Vero</li>
-        <li>Studyinfo</li>
-        <li>Student Housing Services</li>
-    </ul>
-
-</section>
-
+      </main>
+<footer>
+  <strong>LET'S BE FINANCIALLY PREPARED</strong>
+  <p class="lang-en">A practical financial guide for Burmese international students</p>
+  <p class="lang-my">မြန်မာနိုင်ငံသား နိုင်ငံတကာကျောင်းသားများအတွက် လက်တွေ့အသုံးချနိုင်သော ငွေကြေးစီမံခန့်ခွဲမှု လမ်းညွှန်</p>
+  <small class="lang-en">A guide from Saw Thaddar Naing</small>
+  <small class="lang-my">စောသဒ္ဓါနိုင် ရေးသားထားသော ငွေကြေးစီမံခန့်ခွဲမှု လမ်းညွှန်</small>
+</footer>
 <script>
-
-function showPage(pageId){
-
-    document.getElementById("home").classList.add("hidden");
-
-    document.querySelectorAll(".page").forEach(page=>{
-        page.classList.remove("active");
-    });
-
-    document.getElementById(pageId).classList.add("active");
-}
-
-function goHome(){
-
-    document.getElementById("home").classList.remove("hidden");
-
-    document.querySelectorAll(".page").forEach(page=>{
-        page.classList.remove("active");
-    });
-}
-
+  const button = document.getElementById('languageButton');
+  button.addEventListener('click', () => {
+    const isMyanmar = document.body.classList.toggle('mm');
+    document.documentElement.lang = isMyanmar ? 'my' : 'en';
+    button.textContent = isMyanmar ? 'English' : 'မြန်မာဘာသာ';
+  });
 </script>
-
 </body>
 </html>

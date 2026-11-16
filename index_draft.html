@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financial Guide for Students in Finland</title>
+<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="icon" type="image/x-icon" href="./image/favicon.png">
+</head>
+
+<body>
+
+<div id="home">
+
+    <section class="hero">
+
+        <div class="logo">
+         Are you financially prepared to study in Finland?
+        </div>
+
+        <h1>
+        Guide for your studies, finances, and risks
+        </h1>
+
+        <p>
+            A practical financial guide for Burmese students planning to study
+            in Finland and students already studying in Finland.
+        </p>
+
+        <a href="#guide" class="btn">
+            Start your financial preparation →
+        </a>
+
+    </section>
+
+    <section class="container" id="guide">
+
+        <h2 class="section-title">
+            Explore the Guide
+        </h2>
+
+        <div class="grid">
+
+            <div class="card" onclick="showPage('before')">
+                <div class="card-icon">✈️</div>
+                <h3>Before Studying in Finland</h3>
+                <p>Assess your finances before making a decision.</p>
+            </div>
+
+            <div class="card" onclick="showPage('preparing')">
+                <div class="card-icon">📋</div>
+                <h3>Preparing for Finland</h3>
+                <p>Understand the costs in Finland.</p>
+            </div>
+
+            <div class="card" onclick="showPage('money')">
+                <div class="card-icon">💰</div>
+                <h3>Managing Money</h3>
+                <p>Plan your income and everyday expenses.</p>
+            </div>
+
+            <div class="card" onclick="showPage('risks')">
+                <div class="card-icon">⚠️</div>
+                <h3>Financial Risks</h3>
+                <p>Prepare for unexpected financial challenges.</p>
+            </div>
+
+            <div class="card" onclick="showPage('tools')">
+                <div class="card-icon">🧮</div>
+                <h3>Practical Tools</h3>
+                <p>Useful tools for financial planning.</p>
+            </div>
+
+            <div class="card" onclick="showPage('resources')">
+                <div class="card-icon">📚</div>
+                <h3>Resources</h3>
+                <p>Official information and useful links.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<!-- BEFORE STUDYING -->
+
+<section id="before" class="page">
+
+    <button class="back-btn" onclick="goHome()">
+        ← Back
+    </button>
+
+    <h2>Before Studying in Finland</h2>
+
+    <p>
+        This section helps prospective students evaluate whether they are
+        financially prepared to study in Finland.
+    </p>
+
+    <ul>
+        <li>Tuition fees</li>
+        <li>Financial requirements</li>
+        <li>Scholarships</li>
+        <li>Estimated living costs</li>
+        <li>Emergency funds</li>
+    </ul>
+
+</section>
+
+<!-- PREPARING -->
+
+<section id="preparing" class="page">
+
+    <button class="back-btn" onclick="goHome()">
+        ← Back
+    </button>
+
+    <h2>Preparing for Finland</h2>
+
+    <ul>
+        <li>Flight costs</li>
+        <li>Housing deposits</li>
+        <li>Health insurance</li>
+        <li>Opening bank accounts</li>
+        <li>Arrival checklist</li>
+    </ul>
+
+</section>
+
+<!-- MONEY -->
+
+<section id="money" class="page">
+
+    <button class="back-btn" onclick="goHome()">
+        ← Back
+    </button>
+
+    <h2>Managing Money</h2>
+
+    <ul>
+        <li>Budgeting techniques</li>
+        <li>Tracking spending</li>
+        <li>Part-time income management</li>
+        <li>Saving strategies</li>
+    </ul>
+
+</section>
+
+<!-- RISKS -->
+
+<section id="risks" class="page">
+
+    <button class="back-btn" onclick="goHome()">
+        ← Back
+    </button>
+
+    <h2>Financial Risks</h2>
+
+    <ul>
+        <li>Inflation</li>
+        <li>Currency fluctuations</li>
+        <li>Rent increases</li>
+        <li>Unexpected expenses</li>
+    </ul>
+
+</section>
+
+<!-- TOOLS -->
+
+<section id="tools" class="page">
+
+    <button class="back-btn" onclick="goHome()">
+        ← Back
+    </button>
+
+    <h2>Practical Tools</h2>
+
+    <ul>
+        <li>Budget Calculator</li>
+        <li>Savings Goal Calculator</li>
+        <li>Emergency Fund Calculator</li>
+    </ul>
+
+</section>
+
+<!-- RESOURCES -->
+
+<section id="resources" class="page">
+
+    <button class="back-btn" onclick="goHome()">
+        ← Back
+    </button>
+
+    <h2>Links to Resources</h2>
+
+    <ul class="potential-resources">
+        <li><a href="https://www.migri.fi/" target="_blank">Migri</a></li>
+        <li><a href="https://www.kela.fi/" target="_blank">Kela</a></li>
+        <li><a href="https://www.vero.fi/" target="_blank">Vero</a></li>
+        <li><a href="https://www.studyinfo.fi/" target="_blank">StudyInfo</a></li>
+    </ul>
+
+</section>
+
+<script>
+
+function showPage(pageId){
+
+    document.getElementById("home").classList.add("hidden");
+
+    document.querySelectorAll(".page").forEach(page=>{
+        page.classList.remove("active");
+    });
+
+    document.getElementById(pageId).classList.add("active");
+}
+
+function goHome(){
+
+    document.getElementById("home").classList.remove("hidden");
+
+    document.querySelectorAll(".page").forEach(page=>{
+        page.classList.remove("active");
+    });
+}
+
+</script>
+
+</body>
+</html>

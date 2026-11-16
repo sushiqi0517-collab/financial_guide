@@ -5,13 +5,13 @@
     font-family:Arial, sans-serif;
 }
 
-body{
+body {
     background:#000;
     color:white;
 }
 
 .hero{
-    background:#203945;
+    background:#2D2E2E;
     padding:60px 8%;
 }
 
@@ -49,6 +49,9 @@ body{
     padding:50px 8%;
 }
 
+#guide{
+    background:#0f0f0f;
+}
 .section-title{
     font-size:36px;
     margin-bottom:40px;
@@ -61,7 +64,7 @@ body{
 }
 
 .card{
-    background:#111;
+    background:#1e1f1f;
     border:1px solid #222;
     border-radius:16px;
     padding:30px;
@@ -71,7 +74,7 @@ body{
 
 .card:hover{
     transform:translateY(-5px);
-    border-color:#22c55e;
+    border-color:#f8ec07;
 }
 
 .card-icon{
@@ -93,8 +96,8 @@ body{
 }
 
 .back-btn{
-    background:#22c55e;
-    color:black;
+    background:#2D2E2E;
+    color:#fff;
     border:none;
     padding:12px 20px;
     border-radius:10px;
@@ -128,4 +131,14 @@ li{
 
 .hidden{
     display:none;
+}
+
+.potential-resources a {
+    text-decoration: underline;
+    color: #fff;
+}
+
+a:hover {
+color: red; /* Hover color */
+text-decoration: underline; /* Adds underline on hover */
 }
